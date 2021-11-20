@@ -19,6 +19,7 @@ namespace WebApiUebungen.Entities
         }
 
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,6 +42,15 @@ namespace WebApiUebungen.Entities
                     .HasMaxLength(50);
 
                 entity.Property(e => e.Size).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.Password).HasMaxLength(50);
+
+                entity.Property(e => e.Salt).HasMaxLength(50);
+
+                entity.Property(e => e.UserName).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

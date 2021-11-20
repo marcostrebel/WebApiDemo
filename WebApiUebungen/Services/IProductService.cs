@@ -8,9 +8,9 @@ namespace WebApiUebungen.Services
 {
     public interface IProductService
     {
-        Task Create(Product product, CancellationToken cancellationToken = default);
+        Task CreateAsync(Product product, CancellationToken cancellationToken = default);
 
-        Task Update(int productId, Product product, CancellationToken cancellationToken = default);
+        Task UpdateAsync(int productId, Product product, CancellationToken cancellationToken = default);
 
         Task<Product> GetProductByIdAsync(int productId, CancellationToken cancellationToken = default);
 

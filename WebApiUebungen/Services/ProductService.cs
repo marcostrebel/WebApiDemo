@@ -19,7 +19,7 @@ namespace WebApiUebungen.Services
             this.dbContext = dbContext;
         }
 
-        public async Task Create(Product product, CancellationToken cancellationToken)
+        public async Task CreateAsync(Product product, CancellationToken cancellationToken)
         {
             var existing = await dbContext.Product
                 .Where(p => p.ProductNr == product.ProductNr)
@@ -32,8 +32,11 @@ namespace WebApiUebungen.Services
             await dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task Update(int productId, Product product, CancellationToken cancellationToken)
+        public async Task UpdateAsync(int productId, Product product, CancellationToken cancellationToken)
         {
+            if (product is null)
+                throw new ArgumentNullException(nameof(product));
+
             var existing = await GetProductByIdAsync(productId, cancellationToken);
 
             if (existing is null)

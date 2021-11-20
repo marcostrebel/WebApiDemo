@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApiUebungen</name>
+    </assembly>
+    <members>
+        <member name="M:WebApiUebungen.Controllers.AuthenticationController.SignUp(WebApiUebungen.Models.Credentials,System.Threading.CancellationToken)">
+            <summary>
+            User sign up.
+            </summary>
+            <param name="credentials"></param>
+            <param name="cancellationToken"></param>
+            <returns>The ID of the new user.</returns>
+        </member>
+        <member name="M:WebApiUebungen.Controllers.AuthenticationController.SignIn(WebApiUebungen.Models.Credentials,System.Threading.CancellationToken)">
+            <summary>
+            User sign in.
+            </summary>
+            <param name="credentials"></param>
+            <param name="cancellationToken"></param>
+            <returns>The JSON Web Token.</returns>
+        </member>
+        <member name="M:WebApiUebungen.Controllers.ProductController.CreateProductAsync(WebApiUebungen.Entities.Product,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new product.
+            </summary>
+            <param name="product"><see cref="T:WebApiUebungen.Entities.Product"/> to insert.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiUebungen.Controllers.ProductController.UpdateProductAsync(System.Int32,WebApiUebungen.Entities.Product,System.Threading.CancellationToken)">
+            <summary>
+            Updates an existing product.
+            </summary>
+            <param name="productId">ID of the <see cref="T:WebApiUebungen.Entities.Product"/> to update.</param>
+            <param name="product">The new values of the <see cref="T:WebApiUebungen.Entities.Product"/>.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiUebungen.Controllers.ProductController.GetProductsAsync(WebApiUebungen.Models.ProductSearchOptions,WebApiUebungen.Models.Pagination,System.Threading.CancellationToken)">
+            <summary>
+            Finds products with the given <paramref name="searchOptions"/>.
+            </summary>
+            <param name="searchOptions"></param>
+            <param name="pagination"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiUebungen.Controllers.ProductController.GetProductByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Finds a product by its ID.
+            </summary>
+            <param name="productId">ID of the <see cref="T:WebApiUebungen.Entities.Product"/> to retrieve.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiUebungen.Controllers.ProductController.GetProductByNrAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Finds a product by its number.
+            </summary>
+            <param name="productNr"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiUebungen.Controllers.ProductController.DeleteByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Removes the product with the given <paramref name="productId"/>.
+            </summary>
+            <param name="productId">ID of the <see cref="T:WebApiUebungen.Entities.Product"/> to delete.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
