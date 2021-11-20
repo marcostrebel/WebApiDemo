@@ -16,49 +16,6 @@ namespace WebApiUebungen.Controllers
     [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
-        private static BlockingCollection<Product> products = new()
-        {
-            new Product
-            {
-                Id = 1,
-                ProductNr = "TS-678",
-                ProductName = "Jogging Schuhe",
-                Price = 39.90m,
-                Color = "weiss",
-                Size = "42",
-                CreatorUsername = "Max"
-            },
-            new Product
-            {
-                Id = 2,
-                ProductNr = "RJ-234",
-                ProductName = "Regenjacke",
-                Price = 119m,
-                Color = "rot",
-                Size = "XL",
-                CreatorUsername = "marco"
-            },
-            new Product
-            {
-                Id = 3,
-                ProductNr = "WJ-334",
-                ProductName = "Windjacke",
-                Price = 39.90m,
-                Color = "rot/blau",
-                Size = "M",
-                CreatorUsername = "Max"
-            },
-            new Product
-            {
-                Id = 4,
-                ProductNr = "RS-007",
-                ProductName = "Rucksack",
-                Price = 39.90m,
-                Color = "schwarz",
-                Size = "Tagesrucksack",
-                CreatorUsername = "marco"
-            },
-        };
         private readonly IProductService productService;
 
         public ProductController(IProductService productService)
@@ -128,7 +85,7 @@ namespace WebApiUebungen.Controllers
             return Ok(product);
         }
 
-        [HttpDelete]
+        [HttpDelete("{productId}")]
         public Task DeleteByIdAsync(int productId, CancellationToken cancellationToken)
         {
             return productService.DeleteAsync(productId, cancellationToken);

@@ -74,13 +74,13 @@ namespace WebApiUebungen.Services
         public Task<Product> GetProductByIdAsync(int productId, CancellationToken cancellationToken)
         {
             return dbContext.Product
-                .FirstOrDefaultAsync(p => p.Id == productId, cancellationToken);
+                .SingleOrDefaultAsync(p => p.Id == productId, cancellationToken);
         }
 
         public Task<Product> GetProductByNrAsync(string productNr, CancellationToken cancellationToken)
         {
             return dbContext.Product
-                .FirstOrDefaultAsync(p => p.ProductNr == productNr, cancellationToken);
+                .SingleOrDefaultAsync(p => p.ProductNr == productNr, cancellationToken);
         }
 
         public async Task DeleteAsync(int productId, CancellationToken cancellationToken = default)
